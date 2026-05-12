@@ -1,0 +1,183 @@
+{
+  "solarSystem": {
+    "star": {
+      "name": "Sun",
+      "type": "G-Type Main-Sequence Star",
+      "massKg": 1.989e30,
+      "radiusKm": 696340,
+      "surfaceTemperatureK": 5778
+    },
+    "planets": [
+      {
+        "name": "Mercury",
+        "type": "Terrestrial Planet",
+        "massKg": 3.3011e23,
+        "radiusKm": 2439.7,
+        "orbitalPeriodDays": 87.97,
+        "moons": []
+      },
+      {
+        "name": "Venus",
+        "type": "Terrestrial Planet",
+        "massKg": 4.8675e24,
+        "radiusKm": 6051.8,
+        "orbitalPeriodDays": 224.7,
+        "moons": []
+      },
+      {
+        "name": "Earth",
+        "type": "Terrestrial Planet",
+        "massKg": 5.97237e24,
+        "radiusKm": 6371.0,
+        "orbitalPeriodDays": 365.25,
+        "moons": [
+          {
+            "name": "Moon",
+            "radiusKm": 1737.4,
+            "orbitalPeriodDays": 27.3
+          }
+        ]
+      },
+      {
+        "name": "Mars",
+        "type": "Terrestrial Planet",
+        "massKg": 6.4171e23,
+        "radiusKm": 3389.5,
+        "orbitalPeriodDays": 687,
+        "moons": [
+          {
+            "name": "Phobos",
+            "radiusKm": 11.3,
+            "orbitalPeriodHours": 7.65
+          },
+          {
+            "name": "Deimos",
+            "radiusKm": 6.2,
+            "orbitalPeriodHours": 30.35
+          }
+        ]
+      },
+      {
+        "name": "Jupiter",
+        "type": "Gas Giant",
+        "massKg": 1.8982e27,
+        "radiusKm": 69911,
+        "orbitalPeriodDays": 4331,
+        "moons": [
+          {
+            "name": "Io",
+            "radiusKm": 1821.6
+          },
+          {
+            "name": "Europa",
+            "radiusKm": 1560.8
+          },
+          {
+            "name": "Ganymede",
+            "radiusKm": 2634.1
+          },
+          {
+            "name": "Callisto",
+            "radiusKm": 2410.3
+          }
+        ]
+      },
+      {
+        "name": "Saturn",
+        "type": "Gas Giant",
+        "massKg": 5.6834e26,
+        "radiusKm": 58232,
+        "orbitalPeriodDays": 10747,
+        "moons": [
+          {
+            "name": "Titan",
+            "radiusKm": 2574.7
+          },
+          {
+            "name": "Enceladus",
+            "radiusKm": 252.1
+          }
+        ]
+      },
+      {
+        "name": "Uranus",
+        "type": "Ice Giant",
+        "massKg": 8.681e25,
+        "radiusKm": 25362,
+        "orbitalPeriodDays": 30589,
+        "moons": [
+          {
+            "name": "Titania",
+            "radiusKm": 788.9
+          },
+          {
+            "name": "Oberon",
+            "radiusKm": 761.4
+          }
+        ]
+      },
+      {
+        "name": "Neptune",
+        "type": "Ice Giant",
+        "massKg": 1.02413e26,
+        "radiusKm": 24622,
+        "orbitalPeriodDays": 59800,
+        "moons": [
+          {
+            "name": "Triton",
+            "radiusKm": 1353.4
+          }
+        ]
+      }
+    ],
+    "dwarfPlanets": [
+      {
+        "name": "Pluto",
+        "massKg": 1.303e22,
+        "radiusKm": 1188.3,
+        "moons": ["Charon", "Styx", "Nix", "Kerberos", "Hydra"]
+      },
+      {
+        "name": "Eris",
+        "massKg": 1.6466e22,
+        "radiusKm": 1163,
+        "moons": ["Dysnomia"]
+      },
+      {
+        "name": "Haumea",
+        "massKg": 4.006e21,
+        "meanRadiusKm": 816,
+        "moons": ["Hiʻiaka", "Namaka"]
+      },
+      {
+        "name": "Makemake",
+        "massKg": 3.1e21,
+        "radiusKm": 715,
+        "moons": ["MK2"]
+      },
+      {
+        "name": "Ceres",
+        "massKg": 9.393e20,
+        "radiusKm": 473,
+        "location": "Asteroid Belt"
+      }
+    ],
+    "regions": [
+      {
+        "name": "Asteroid Belt",
+        "location": "Between Mars and Jupiter",
+        "estimatedObjects": "Millions"
+      },
+      {
+        "name": "Kuiper Belt",
+        "location": "Beyond Neptune",
+        "estimatedObjects": "Billions"
+      },
+      {
+        "name": "Oort Cloud",
+        "location": "Outer Solar System",
+        "estimatedObjects": "Trillions"
+      }
+    ]
+  }
+}
