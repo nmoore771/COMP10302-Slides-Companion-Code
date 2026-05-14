@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Planets</title>
+    <style>
+        table, td { border : 1px solid black; }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th> Planet </th> <th> Type </th> <th> Mass (kg) </th> <th> Radius (km) </th> <th> Orbital Period (earth days) </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each planets}}
+            <tr>
+                <td> {{this.name}} </td>
+                <td> {{this.type}} </td>
+                <td> {{this.massKg}} </td>
+                <td> {{this.radiusKm}} </td>
+                <td> {{this.orbitalPeriodDays}} </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

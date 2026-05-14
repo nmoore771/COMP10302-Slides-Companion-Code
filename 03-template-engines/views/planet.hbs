@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Planets</title>
+    <style>
+        table, td { border : 1px solid black; }
+    </style>
+</head>
+<body>
+    {{#if found}}
+    <h2> Planet Data for {{planet.name}} </h2>
+    <ul>
+        <li> Type : {{planet.type}} </li>
+        <li> Mass (kg) : {{planet.massKg}} </li>
+        <li> Radius (km) : {{planet.radiusKm}} </li>
+        <li> Year Length (earth days) : {{planet.orbitalPeriodDays}} </li>
+        {{#if planet.moons}}
+            <li> Moons :
+                <ul>
+                {{#each planet.moons}}
+                    <li> Name : {{this.name}} </li>
+                    <ul>
+                        <li> Radius (km) : {{this.radiusKm}} </li>
+                    </ul>
+                {{/each}}
+                </ul>
+            </li>
+        {{/if}}
+    </ul>
+    {{else}}
+        <h2> Error! </h2>
+        <p> No data found for planet {{planet.name}}. </p>
+    {{/if}}
+</body>
+</html>
