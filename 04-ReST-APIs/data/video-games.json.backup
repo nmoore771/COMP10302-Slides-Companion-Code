@@ -1,0 +1,13 @@
+[{
+  "name" : "Super Mario Bros. 3",
+  "genre" : "Platformer",
+  "platform" : ["NES"],
+  "upvotes" : 4
+},
+  {
+    "name" : "Sonic The Hedgehog '06",
+    "genre" : "Platformer",
+    "platform" : "Xbox 360",
+    "upvotes" : 0
+  }
+]
