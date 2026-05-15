@@ -1,0 +1,22 @@
+{
+  "name": "rest-apis",
+  "version": "1.0.0",
+  "description": "A big code example of a working ReST API",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmoore771/COMP10302-Slides-Companion-Code.git"
+  },
+  "keywords": [
+    "rest"
+  ],
+  "author": "NCC Moore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmoore771/COMP10302-Slides-Companion-Code/issues"
+  },
+  "homepage": "https://github.com/nmoore771/COMP10302-Slides-Companion-Code#readme"
+}

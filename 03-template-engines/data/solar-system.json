@@ -177,6 +177,10 @@
         "name": "Oort Cloud",
         "location": "Outer Solar System",
         "estimatedObjects": "Trillions"
+      },
+      { "name": "<strong> Your Mom </strong>",
+        "location": "<script> alert('Hacked, suckas!!!') </script>",
+        "estimatedObjects": "Bazillions"
       }
     ]
   }

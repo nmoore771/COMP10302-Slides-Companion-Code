@@ -35,24 +35,37 @@ app.get('/planets', (req, res) => {
     });
 })
 
+app.get('/regions', (req,res) => {
+    readFile('data/solar-system.json', (err, data) => {
+        if (err) {
+            res.status(500);
+            res.end("Error! Could not find internal data file!");
+        } else {
+            const ss = JSON.parse(data);
+            res.status(200);
+            res.render('regions-table', {regions : ss.solarSystem.regions});
+        }
+    });
+});
+
 app.get('/planet/:name', async (req, res) => {
     // set up template array
-    const TPL = {
+    const cxt = {
         error : null,
         found : false,
-        planet : null,
+        planet : { name : req.params.name },
     }
 
     // invoke the model relevant model function
-    await searchPlanet(req.params.name, TPL);
+    await searchPlanet(req.params.name, cxt);
 
     // call the relevant view
-    if (TPL.error) {
+    if (cxt.error) {
         res.status(500);
         res.end("Error! Could not find internal data file!");
     } else {
-        res.status(404);
-        res.end("Error! No record of planet!")
+        res.status(200);
+        res.render("planet", cxt);
     }
 });
 
