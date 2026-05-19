@@ -25,8 +25,8 @@ function getData () {
                 up_button.addEventListener("click", () => upvote(j));
                 tds[4].appendChild(up_button);
                 del_button = document.createElement("button");
-                del_button.textContent = "Upvote!";
-                del_button.addEventListener("click", () => upvote(j));
+                del_button.textContent = "Delete!";
+                del_button.addEventListener("click", () => deleteGame(j));
                 tds[5].appendChild(del_button);
                 for (let i = 0; i < tds.length; i++) {
                     tr.appendChild(tds[i]);
@@ -51,13 +51,26 @@ function deleteGame(id) {
 }
 
 function addByQuery () {
-
-}
-
-function addByForm () {
-
+    const n = document.querySelector("input[name='name']").value;
+    const g = document.querySelector("input[name='genre']").value;
+    const p = document.querySelector("input[name='platform']").value;
+    let params = "?name=" + n + "&genre=" + g + "&platform=" + p;
+    console.log("Adding entry with " + params);
+    fetch("games" + params, { method : 'post'})
+        .then(resp => resp.text())
+        .then(data => console.log(data));
 }
 
 function addByJSON () {
-
+    const n = document.querySelector("input[name='name']").value;
+    const g = document.querySelector("input[name='genre']").value;
+    const p = document.querySelector("input[name='platform']").value;
+    const payload = { name : n, genre : g, platform : p};
+    console.log("Adding entry with " + JSON.stringify(payload));
+    fetch("games", { method : 'post'
+        , body : JSON.stringify(payload)
+        , headers : {'content-type' : 'application/json'}
+    })
+        .then(resp => resp.text())
+        .then(data => console.log(data));
 }

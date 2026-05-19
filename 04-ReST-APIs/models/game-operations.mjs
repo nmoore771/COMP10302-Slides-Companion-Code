@@ -10,21 +10,21 @@ export async function getGames(context) {
     }
 }
 
-export async function addGame(context, name, genre, platform) {
+export async function addGame(context) {
     try {
-        // step 1: read existing data
+        // step 1: Data Validation
+        if ( !context.newGame.name || !context.newGame.genre || !context.newGame.platform) {
+            throw new Error("Incomplete data!");
+        }
+
+        // step 2: read existing data
         const raw = await fs.readFile('data/video-games.json')
         const data = JSON.parse(raw);
-        // step 2: construct new element and append
-        let newGame =
-            { "name" : name
-            , "genre" : genre
-            , "platform" : platform
-            , "upvotes" : 0
-            };
-        data.push(newGame);
-        // step 3: write updated data back to file
-        await fs.writeFile('data/video-games.json', data);
+        // step 3: construct new element and append
+        context.newGame.upvotes = 0;
+        data.push(context.newGame);
+        // step 4: write updated data back to file
+        await fs.writeFile('data/video-games.json', JSON.stringify(data));
     } catch (err) {
         context.error = err;
     }
@@ -41,15 +41,16 @@ export async function upvote(context, id) {
             throw new Error("Error! Game not found!");
         }
         // step 2:
-        data[i].upvotes ++;
+        data[id].upvotes ++;
         // step 3: write updated data back to file
-        await fs.writeFile('data/video-games.json', data);
+        await fs.writeFile('data/video-games.json', JSON.stringify(data));
     } catch (err) {
+        console.log("error! " + err);
         context.error = err;
     }
 }
 
-export async function deleteGame(context, name) {
+export async function deleteGame(context, id) {
     try {
         // step 1: read existing data
         const raw = await fs.readFile('data/video-games.json')
@@ -60,10 +61,11 @@ export async function deleteGame(context, name) {
             throw new Error("Error! Game not found!");
         }
         // step 2: (this is how you delete one entry in JS)
-        data = data.splice(i, 1);
+        data.splice(id, 1);
         // step 3: write updated data back to file
-        await fs.writeFile('data/video-games.json', data);
+        await fs.writeFile('data/video-games.json', JSON.stringify(data));
     } catch (err) {
+        console.log("error! " + err);
         context.error = err;
     }
 }

@@ -1,13 +1,1 @@
-[{
-  "name" : "Super Mario Bros. 3",
-  "genre" : "Platformer",
-  "platform" : ["NES"],
-  "upvotes" : 4
-},
-  {
-    "name" : "Sonic The Hedgehog '06",
-    "genre" : "Platformer",
-    "platform" : "Xbox 360",
-    "upvotes" : 0
-  }
-]
+[{"name":"Super Mario Bros. 3","genre":"<strong>Platformer</strong>","platform":"NES","upvotes":4},{"name":"Sonic The Hedgehog '06","genre":"Platformer","platform":"Xbox 360","upvotes":0},{"name":"The Legend of Zelda: Ocarina of Time","genre":"Action-Adventure","platform":"SNES","upvotes":12},{"name":"Stardew Valley","genre":"Simulation","platform":"Nintendo Switch","upvotes":15}]
