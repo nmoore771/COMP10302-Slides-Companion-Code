@@ -30,42 +30,7 @@ export async function addGame(context) {
     }
 }
 
-export async function upvote(context, id) {
-    try {
-        // step 1: read existing data
-        const raw = await fs.readFile('data/video-games.json')
-        const data = JSON.parse(raw);
 
-        // throw an error if the id is outside the available indexes.
-        if (id < 0 || id >= data.length) {
-            throw new Error("Error! Game not found!");
-        }
-        // step 2:
-        data[id].upvotes ++;
-        // step 3: write updated data back to file
-        await fs.writeFile('data/video-games.json', JSON.stringify(data));
-    } catch (err) {
-        console.log("error! " + err);
-        context.error = err;
-    }
-}
 
-export async function deleteGame(context, id) {
-    try {
-        // step 1: read existing data
-        const raw = await fs.readFile('data/video-games.json')
-        let data = JSON.parse(raw);
-        // step 2: search data for game
-        // throw an error if the id is outside the available indexes.
-        if (id < 0 || id >= data.length) {
-            throw new Error("Error! Game not found!");
-        }
-        // step 2: (this is how you delete one entry in JS)
-        data.splice(id, 1);
-        // step 3: write updated data back to file
-        await fs.writeFile('data/video-games.json', JSON.stringify(data));
-    } catch (err) {
-        console.log("error! " + err);
-        context.error = err;
-    }
-}
+
+
