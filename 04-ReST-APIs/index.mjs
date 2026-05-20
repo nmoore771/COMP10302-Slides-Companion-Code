@@ -1,12 +1,12 @@
 import express from 'express';
-import { getGames, upvote, addGame, deleteGame } from './models/game-operations.mjs'
+import { getGames, upvote, addGame /*, deleteGame*/ } from './models/game-operations.mjs'
 
 const app = express();
 const port = 3000;
 
 // Setting up middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded());
 app.use(express.static('./public'));
 
 //redirect '/' to index.html
