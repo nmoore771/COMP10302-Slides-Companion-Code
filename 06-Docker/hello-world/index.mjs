@@ -9,5 +9,5 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
     res.type("text/plain");
-    res.send("Hello, World!");
+    res.send("Hello, Docker World!");
 });

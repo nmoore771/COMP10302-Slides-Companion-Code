@@ -7,9 +7,9 @@ const port = 3000;
 // Setting up middleware
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.static('./public'));
+app.use(express.static('./views'));
 
-//redirect '/' to index.html
+//redirect '/' to uploadForm.hbs
 app.get('/', (req, res) => {
     console.log("redirecting to index page...")
     res.redirect("/index.html");

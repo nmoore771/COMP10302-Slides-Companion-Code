@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload/Download Example!</title>
+    <script src="ajax.js"> </script>
+    <style>
+        table, td, th { border: 2px solid black; }
+
+        .thumb {
+            width: 75px;
+            height: 75px;
+            overflow: hidden;
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+<h2> Uploaded Files </h2>
+
+<table>
+    <thead>
+        <tr>
+            <th> File Name </th> <th> File Size </th> <th> Thumbnail </th> <th> Download Link </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each files}}
+            <tr>
+                <td> {{ this.name }} </td>
+                <td> {{ this.size }} </td>
+                <td>
+                    <div class="thumb">
+                        <img width="100" src="{{ this.path }}" alt="{{this.name}}" />
+                    </div>
+                </td>
+                <td>
+                    <a href="download/{{this.name}}"> download </a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+</body>
+</html>

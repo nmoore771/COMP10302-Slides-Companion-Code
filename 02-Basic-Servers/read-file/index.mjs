@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.get('/splash', (req, res) => {
     console.log("Sending Welcome Page");
-    readFile("public/welcome.html", (err, data) => {
+    readFile("views/welcome.html", (err, data) => {
         if (err) {
             res.status(404);
             res.end("File not found!");

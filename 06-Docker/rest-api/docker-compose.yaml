@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    entrypoint: ["node", "index.mjs"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - json-data:/usr/app/data
+
+volumes:
+  json-data:
