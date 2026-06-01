@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Games Database!</title>
+    <script src="ajax.js"> </script>
+    <style>
+        table, td, th { border: 2px solid black; }
+    </style>
+</head>
+<body>
+    <h2> Video Games Database! </h2>
+
+    <table>
+        <thead>
+        <th> Name </th> <th> Genre </th> <th> Platform </th> <th> Upvotes </th> <th> Like? </th> <th> Delete? </th>
+        </thead>
+        <tbody id="data-output">
+
+        </tbody>
+    </table>
+    <button onclick="getData()"> Fetch Data </button>
+    <form method="post" action="games">
+        Name : <input type="text" name="name"> <br>
+        Genre : <input type="text" name="genre"> <br>
+        Platform : <input type="text" name="platform"> <br>
+        <input type="submit" value="Submit Via Form-Based POST Request!">
+    </form>
+    <button onclick="addByQuery()"> Submit Via Query Parameters! </button> <br>
+    <button onclick="addByJSON()"> Submit Via JSON in the Body! </button>
+</body>
+</html>
