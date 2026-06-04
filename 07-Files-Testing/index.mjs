@@ -72,7 +72,7 @@ app.get('/files', async (req,res) => {
 });
 
 app.get('/download/:file', (req,res) => {
-    res.sendFile('uploads/' + req.params.file, { root : "." }, (err) => {
+    res.sendFile(req.params.file, { root : "./uploads" }, (err) => {
         if (err) {
             console.log(err);
             res.status(500).end("An internal error occured.");
