@@ -1,0 +1,5 @@
+### Put request to upvote entry 1
+PUT http://localhost:3000/games/0
+
+### Put request to upvote missing entry
+PUT http://localhost:3000/games/9999

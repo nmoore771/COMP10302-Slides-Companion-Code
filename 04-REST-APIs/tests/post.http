@@ -1,0 +1,52 @@
+### Post request to add a game via JSON body
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+  "name" : "Test Game 1",
+  "genre" : "Test Genre 1",
+  "platform" : "Test Platform 1"
+}
+
+### Post request to add a game via form-based post request
+POST http://localhost:3000/games
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Game 2&
+genre=Test Genre 2&
+platform=Test Platform 2
+
+### Post request to add a game via query parameters
+POST http://localhost:3000/games?name=Test Game 3&genre=Test Genre 3&platform=Test Platform 3
+Content-Type: application/x-www-form-urlencoded
+
+### Post request to add a game via JSON body missing name
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+  "genre" : "Test Genre 4",
+  "platform" : "Test Platform 4"
+}
+
+### Post request to add a game via JSON body missing genre
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+  "name" : "Test Game 5",
+  "platform" : "Test Platform 5"
+}
+
+### Post request to add a game via JSON body missing body
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+  "name" : "Test Game 6",
+  "genre" : "Test Genre 6"
+}
+
+### Post request to add a game via JSON body empty body
+POST http://localhost:3000/games
+Content-Type: application/json

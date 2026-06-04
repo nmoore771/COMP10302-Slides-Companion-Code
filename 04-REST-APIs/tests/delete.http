@@ -1,0 +1,5 @@
+### Delete request to delete entry 1
+DELETE http://localhost:3000/games/0
+
+### Delete request to delete missing entry
+DELETE http://localhost:3000/games/9999

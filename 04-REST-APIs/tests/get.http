@@ -1,0 +1,4 @@
+### Get the contents of the database
+GET http://localhost:3000/games
+Accept: application/json
+
