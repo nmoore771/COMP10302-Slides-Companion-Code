@@ -1,0 +1,39 @@
+services:
+  database:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: media
+    ports:
+      - '3306:3306'
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+  web:
+    build:
+      context: ./web-server
+      dockerfile: Dockerfile
+    entrypoint: ["node", "server.mjs"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      database:
+        condition: service_healthy
+volumes:
+  db_data:
