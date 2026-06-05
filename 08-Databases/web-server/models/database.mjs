@@ -10,15 +10,43 @@ const connection = await mysql.createConnection({
 connection.connect();
 
 export async function getAll() {
-    const query = "SELECT * FROM books";
-    const [data] = await connection.query(query);
-    return data;
+    try {
+        const query = "SELECT * FROM books";
+        const [data] = await connection.query(query);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return err;
+    }
 }
 export async function get(id) {
-    const query = "SELECT * FROM books WHERE id = ?";
-    const [data] = await connection.query(query, [id]);
-    return data;
+    try {
+        const query = "SELECT * FROM books WHERE id = ?";
+        const [data] = await connection.query(query, [id]);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return err;
+    }
+}
+export async function remove(id) {
+    try {
+        const query = "DELETE FROM books WHERE id = ?";
+        const [data] = await connection.query(query, [id]);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return err;
+    }
 }
 
-export async function remove(id) {}
-export function add(movie) {}
+export async function add(book) {
+    try {
+        const query = "INSERT INTO books VALUES (?,?,?)"
+        await connection.query(query, [book.title, book.author, book.rating]);
+    } catch (err) {
+        console.log(err);
+        return err;
+    }
+
+}

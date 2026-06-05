@@ -1,0 +1,9 @@
+### Add a book
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+    "title" : "Metaphysics",
+    "author" : "Aristotle",
+    "rating" : 5
+}
