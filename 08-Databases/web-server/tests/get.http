@@ -1,0 +1,8 @@
+### Get all
+GET localhost:3000/api/books
+
+### Get first book
+GET localhost:3000/api/books/1
+
+### Get missing book
+GET localhost:3000/api/books/999999
