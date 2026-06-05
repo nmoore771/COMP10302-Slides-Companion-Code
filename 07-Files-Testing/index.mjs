@@ -56,9 +56,8 @@ app.get('/files', async (req,res) => {
         for (let i = 0; i < filenames.length; i++) {
             let newfile = {};
             newfile.name = filenames[i];
-            let stats = await fs.stat("uploads/" + filenames[i]);
-            newfile.size = stats.size;
             newfile.path = "uploads/" + newfile.name;
+            newfile.size = await fs.stat(newfile.path).size;
             files.push(newfile);
         }
         console.log(files);
@@ -68,7 +67,6 @@ app.get('/files', async (req,res) => {
         res.status(500)
         res.end(err.toString());
     }
-
 });
 
 app.get('/download/:file', (req,res) => {
