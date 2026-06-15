@@ -30,23 +30,9 @@ export async function get(id) {
     }
 }
 export async function remove(id) {
-    try {
-        const query = "DELETE FROM books WHERE id = ?";
-        const [data] = await connection.query(query, [id]);
-        return data;
-    } catch (err) {
-        console.log(err);
-        return err;
-    }
+    // your code here!
 }
 
 export async function add(book) {
-    try {
-        const query = "INSERT INTO books VALUES (?,?,?)"
-        await connection.query(query, [book.title, book.author, book.rating]);
-    } catch (err) {
-        console.log(err);
-        return err;
-    }
-
+    // your code here!
 }
