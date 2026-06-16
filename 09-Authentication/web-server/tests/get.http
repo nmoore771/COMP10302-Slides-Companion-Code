@@ -1,0 +1,11 @@
+### Get all
+GET localhost:3000/api/books
+Accept: application/json
+
+### Get first book
+GET localhost:3000/api/books/1
+Accept: application/json
+
+### Get missing book
+GET localhost:3000/api/books/999999
+Accept: application/json
